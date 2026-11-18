@@ -188,6 +188,8 @@ Reference: [the contract](https://docs.dacityswap.com/developers/contract) ·
 
 ## Fees, and where they go
 
+<img src="docs/assets/dcswap.png" alt="The $DCSWAP coin" width="88" align="right" />
+
 The buyer pays a 2.5 % service fee and the seller a 5 % commission, both computed by
 [`fees.ts`](packages/escrow-core/src/fees.ts) and fixed into the order when it is placed. Payment
 processing is passed through at cost. DacitySwap does not keep the service fee and the
