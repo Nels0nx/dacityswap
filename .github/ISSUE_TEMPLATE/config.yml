@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security vulnerability
+    url: https://github.com/Nels0nx/dacityswap/security/advisories/new
+    about: Privately. Please do not open a public issue for anything that could put funds at risk.
+  - name: Documentation
+    url: https://docs.dacityswap.com
+    about: How the escrow works, the references and the FAQ.

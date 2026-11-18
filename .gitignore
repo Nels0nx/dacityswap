@@ -1,0 +1,45 @@
+# dependencies
+node_modules
+.pnpm-store
+
+# build output
+.next
+out
+dist
+.turbo
+*.tsbuildinfo
+next-env.d.ts
+
+# contracts
+packages/contracts/out
+packages/contracts/cache
+packages/contracts/lib
+
+# env — never commit secrets
+.env
+.env.*
+!.env.example
+
+# misc
+.DS_Store
+*.log
+coverage
+.vercel
+
+# docs site build
+apps/docs/.vitepress/dist
+apps/docs/.vitepress/cache
+
+# ── Private working files: kept on disk, out of the public repository ──────────────────────
+# Marketing renders, the film and their pipelines
+marketing/
+# Internal legal risk register and the investor presenter's script.
+# Remove these two lines to publish them; the public position is apps/docs/resources/legal.md
+docs/COMPLIANCE.md
+docs/DEMO-SCRIPT.md
+docs/internal/
+# Raw model drops and video exports
+dacityswaaaaaap/
+/*.glb
+/*.mp4
+/*.mov

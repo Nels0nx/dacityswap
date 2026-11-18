@@ -1,0 +1,22 @@
+name: Feature request
+description: Suggest a change or an addition
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What are you trying to do, and what gets in the way?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What you would like
+  - type: checkboxes
+    id: money
+    attributes:
+      label: Does it change when or how money moves?
+      description: Changes to the escrow rules or the fee arithmetic need a discussion before any code.
+      options:
+        - label: Yes, it touches escrow-core or the contract

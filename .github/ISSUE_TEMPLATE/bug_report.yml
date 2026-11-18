@@ -1,0 +1,38 @@
+name: Bug report
+description: Something does not work the way the code or the documentation says it should
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Could this put money or user data at risk?** Do not file it here.
+        Report it privately as described in SECURITY.md.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - escrow-core (state machine, fees, settlement)
+        - contracts (DacityEscrow.sol)
+        - web (the demo app)
+        - docs (docs.dacityswap.com)
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected and what you got instead.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: How to reproduce
+      description: Steps, or better, a failing test.
+      render: shell
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit

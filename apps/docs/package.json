@@ -1,0 +1,22 @@
+{
+  "name": "@dacityswap/docs",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "The documentation site published at docs.dacityswap.com.",
+  "license": "Apache-2.0",
+  "scripts": {
+    "dev": "vitepress dev . --port 3001",
+    "build": "vitepress build .",
+    "preview": "vitepress preview . --port 3001"
+  },
+  "dependencies": {
+    "@dacityswap/escrow-core": "workspace:*"
+  },
+  "devDependencies": {
+    "@fontsource-variable/archivo": "^5.2.8",
+    "@fontsource-variable/jetbrains-mono": "^5.2.8",
+    "vitepress": "^1.6.4",
+    "vue": "^3.5.0"
+  }
+}

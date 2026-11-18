@@ -1,0 +1,19 @@
+{
+  "name": "@dacityswap/contracts",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Open-source on-chain escrow for DacitySwap stablecoin settlement.",
+  "license": "Apache-2.0",
+  "scripts": {
+    "setup": "node scripts/forge.mjs setup",
+    "build": "node scripts/forge.mjs build --sizes",
+    "test": "node scripts/forge.mjs test",
+    "coverage": "node scripts/forge.mjs coverage --no-match-coverage \"(test|script)\"",
+    "format": "node scripts/forge.mjs fmt",
+    "abi": "node scripts/forge.mjs abi",
+    "compile": "solcjs --bin --abi --optimize --base-path . -o out/solcjs src/DacityEscrow.sol"
+  },
+  "devDependencies": {
+    "solc": "0.8.28"
+  }
+}

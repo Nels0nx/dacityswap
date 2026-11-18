@@ -1,0 +1,40 @@
+{
+  "name": "dacityswap",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Escrow you can read before you trust it: an open-source escrow engine, contract and marketplace demo for in-game items.",
+  "license": "Apache-2.0",
+  "packageManager": "pnpm@10.19.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "turbo run dev --filter=@dacityswap/web",
+    "docs:dev": "pnpm --filter @dacityswap/docs dev",
+    "docs:build": "pnpm --filter @dacityswap/docs build",
+    "build": "turbo run build",
+    "start": "pnpm --filter @dacityswap/web start",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "check": "turbo run lint typecheck test",
+    "format": "prettier --write .",
+    "models:generate": "node scripts/meshy-generate.mjs",
+    "assets:render": "node scripts/render-assets.mjs",
+    "telegram:pack": "node scripts/telegram-pack.mjs",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@gltf-transform/cli": "^4.5.1",
+    "playwright-core": "^1.65.1",
+    "prettier": "^3.10.1",
+    "sharp": "^0.35.5",
+    "turbo": "^2.11.11",
+    "typescript": "^5.9.0"
+  },
+  "homepage": "https://docs.dacityswap.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nels0nx/dacityswap.git"
+  }
+}

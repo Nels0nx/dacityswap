@@ -1,0 +1,17 @@
+node_modules
+.next
+.turbo
+dist
+out
+pnpm-lock.yaml
+packages/contracts/out
+packages/contracts/cache
+packages/contracts/lib
+*.sol
+marketing
+dacityswaaaaaap
+apps/docs/.vitepress/dist
+apps/docs/.vitepress/cache
+packages/contracts/abi
+packages/escrow-core/vectors
+docs/internal
