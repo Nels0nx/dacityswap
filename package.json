@@ -1,0 +1,30 @@
+{
+  "name": "dacityswap",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Escrow you can read before you trust it: the open-source escrow engine and contract behind DacitySwap.",
+  "license": "Apache-2.0",
+  "packageManager": "pnpm@10.19.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "check": "turbo run lint typecheck test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "prettier": "^3.10.1",
+    "turbo": "^2.11.11",
+    "typescript": "^5.9.0"
+  },
+  "homepage": "https://docs.dacityswap.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nels0nx/dacityswap.git"
+  }
+}
