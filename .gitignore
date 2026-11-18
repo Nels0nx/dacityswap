@@ -1,0 +1,24 @@
+# dependencies
+node_modules
+.pnpm-store
+
+# build output
+dist
+out
+.turbo
+*.tsbuildinfo
+coverage
+
+# contracts
+packages/contracts/out
+packages/contracts/cache
+packages/contracts/lib
+
+# env: never commit secrets
+.env
+.env.*
+!.env.example
+
+# misc
+.DS_Store
+*.log
