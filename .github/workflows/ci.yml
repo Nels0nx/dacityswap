@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  app:
+    name: Lint, typecheck, test, build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm format:check
+      - run: pnpm check
+      - run: pnpm build
+
+  contracts:
+    name: Contracts
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/contracts
+    steps:
+      - uses: actions/checkout@v4
+      - uses: foundry-rs/foundry-toolchain@v1
+        with:
+          version: stable
+      - name: Install forge-std at the pinned version
+        run: git clone --quiet --depth 1 --branch v1.9.7 https://github.com/foundry-rs/forge-std lib/forge-std
+      - run: forge fmt --check
+      - run: forge build --sizes
+      - name: Unit, fuzz, vector and invariant tests
+        run: forge test -vvv
+      - name: Coverage
+        run: forge coverage --no-match-coverage "(test|script)"
+      - name: The committed ABI is up to date
+        run: |
+          forge inspect DacityEscrow abi --json | jq . > /tmp/abi.json
+          diff <(jq -S . abi/DacityEscrow.json) <(jq -S . /tmp/abi.json)
